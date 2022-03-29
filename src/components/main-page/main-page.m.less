@@ -1,0 +1,43 @@
+.mapWrapper {
+	position: relative;
+}
+
+.containerOffers {
+	margin: 0 10px;
+}
+
+@media (min-width: 768px) {
+
+	main {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.contentBox {
+		flex-basis: 52%;
+	}
+
+	.mapWrapper {
+		flex-basis: 48%;
+		//position: relative;
+	}
+
+	.containerOffers {
+		margin: 0 10px 0 70px;
+	}
+}
+
+@media (min-width: 1280px) {
+
+	.contentBox {
+		flex-basis: 58%;
+	}
+
+	.mapWrapper {
+		flex-basis: 42%;
+	}
+
+	.containerOffers {
+		margin: 0 30px 0 97px;
+	}
+}

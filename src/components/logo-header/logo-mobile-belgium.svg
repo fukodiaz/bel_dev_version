@@ -1,0 +1,19 @@
+<svg width="91" height="35" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG Editor - http://github.com/mzalive/SVG Editor/ -->
+
+ <g stroke="null">
+  <title>background</title>
+  <rect x="-1" y="-1" width="93" height="37" id="canvas_background" fill="none" stroke="null"/>
+  <g id="canvasGrid" display="none" stroke="null">
+   <rect id="svg_2" width="400" height="200" x="3" y="3" stroke-width="0" fill="url(#gridpattern)" stroke="null"/>
+  </g>
+ </g>
+ <g stroke="null">
+  <title>Layer 1</title>
+  <text fill="rgba(72,60,50,0.9)" x="1" y="22.453125" id="svg_1" font-size="25" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold" font-style="normal" stroke="rgba(202,168,133)">B</text>
+  <text fill="#ffc418" stroke-width="0" x="44.945026" y="23.453125" id="svg_3" font-size="25" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(1.1685616797439735,0,0,1,-32.87079395952691,0) " font-weight="normal" font-style="normal" stroke="#7B572D">E</text>
+  <text fill="#ef3340" stroke-width="0" x="41" y="23.453125" id="svg_11" font-size="25" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold" font-style="normal" stroke="#7B572D">L</text>
+  <text fill="rgba(255,204,153, 0.9)" stroke-width="0" stroke-opacity="null" x="65" y="29.453125" id="svg_13" font-size="21" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-style="italic" stroke="#7B572D">go</text>
+  <line stroke="rgba(221, 173, 175, 0.9)" fill="none" stroke-width="2" x1="71" y1="10.453125" x2="58" y2="26.453125" id="svg_15" stroke-linejoin="null" stroke-linecap="null"/>
+ </g>
+</svg>

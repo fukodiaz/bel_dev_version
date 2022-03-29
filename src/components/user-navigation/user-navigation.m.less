@@ -1,0 +1,72 @@
+.userList {
+	position: absolute;
+	right: 35px;
+	top: 35px;
+}
+
+.linkLogin {
+	position: relative;
+	font-weight: 600;
+	font-size: 19px;
+	color: #fff;
+	&:hover {
+		color: rgba(239,222,205);
+
+		& .svgBox {
+			color: rgba(202, 196, 176, 0.9);
+		}
+	}
+
+	&:active {
+		color: rgba(202, 196, 176, 1);
+
+		& .svgBox {
+			color: rgba(202, 196, 176, 1);
+		}
+	}
+
+	& span {
+		display: none;
+	}
+}
+
+.svgBox {
+	position: absolute;
+	top: -13px;
+	left: -20px;
+	width: 32px;
+	height: 32px;
+	color: #fff;
+
+	&:hover {
+		color: rgba(202, 196, 176, 0.9);
+	}
+}
+
+@media (min-width: 768px) {
+
+	.userList {
+		right: 45px;
+		top: 32px;
+	}
+
+	.linkLogin {
+
+		& span {
+			display: inline;
+		}
+	}
+
+	.svgBox {
+		top: -4px;
+		left: -38px;
+	}
+}
+
+@media (min-width: 1280px) {
+
+	.userList {
+		right: 65px;
+		//top: 32px;
+	}
+}

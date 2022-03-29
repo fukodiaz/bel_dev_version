@@ -1,0 +1,27 @@
+.itemOffered {
+	max-width: 300px;
+	margin-bottom: 22px;
+}
+
+@media (min-width: 768px) {
+	
+	.itemOffered {
+		margin-bottom: 30px;
+	}
+}
+
+@media (min-width: 1280px) {
+
+	.listOffers {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.itemOffered {
+		margin-bottom: 20px;
+
+		&:nth-child(2n-1) {
+			margin-right: auto;
+		}
+	}
+}
