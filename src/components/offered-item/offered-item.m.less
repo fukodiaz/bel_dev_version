@@ -23,8 +23,23 @@
 }
 
 .infoOffer {
+	position: relative;
 	padding-left: 13px;
 	padding-top: 15px;
+}
+
+.buttonLike {
+	position: absolute;
+	top: 14px;
+	right: 15px;
+	background-color: transparent;
+	& .svgBox {
+		color: rgba(190,190,190, 0.3);
+
+		&:hover {
+			color: rgba(205, 118, 118, 0.4) !important;
+		}
+	}
 }
 
 .descrOffer {

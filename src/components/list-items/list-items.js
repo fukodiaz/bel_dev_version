@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import OfferedItem from '../offered-item';
 import {compose} from '../hoc';
 import { withBelgoService } from '../hoc';
-import {fetchOffers} from '../../actions';
+import {fetchOffers, pressLike} from '../../actions';
 import ErrorIndicator from '../error-indicator';
 
 import styles from './list-items.m.less';
@@ -16,14 +16,21 @@ class ListItems extends Component {
 	}
 
 	createListItems = (data) => {
+		const {id} = data;
+		const idOffer = id;
+		const flagLikedOffer = this.props.listLikedOffers.some(({id}) => id === idOffer);
+		const colorLike = flagLikedOffer ? {color: 'rgba(230,57,5, 1)'} : {color: 'rgba(190,190,190, 0.3)'};
+
 		return (
-			<li key={data.id} className={styles.itemOffered}>
-				<OfferedItem {...data} />
+			<li key={id} className={styles.itemOffered}>
+				<OfferedItem {...data} 
+									onPressLike={() => this.props.onPressLike(id)}
+									colorLike={colorLike} />
 			</li>
 		);
 	}
 	render() {
-		const {visibleListOffers, loading, error} = this.props;
+		const {visibleListOffers, loading, error, listLikedOffers} = this.props;
 	
 		if (loading) {
 			return <p>Loading...</p>;
@@ -46,13 +53,14 @@ const mapMethodsToProps = (belgoService) => ({
 	getListOffers: belgoService.getListOffers
 });
 
-const mapStateToProps = ({visibleListOffers, error, loading}) => ({
-	visibleListOffers, error, loading
+const mapStateToProps = ({visibleListOffers, error, loading, listLikedOffers}) => ({
+	visibleListOffers, error, loading, listLikedOffers
 });
 
 const mapDispatchToProps = (dispatch, {getListOffers}) => {
 	return {
-		fetchOffers: fetchOffers(getListOffers, dispatch)
+		fetchOffers: fetchOffers(getListOffers, dispatch),
+		onPressLike: (id) => dispatch(pressLike(id))
 	};
 };
 

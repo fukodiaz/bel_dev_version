@@ -73,6 +73,13 @@ const dataFormError = (payload) => ({
 // };
 
 
+// Likes
+const pressLike = (payload) => ({
+	type: 'PRESS_LIKE',
+	payload
+});
+
+
 
 export {
 	fetchOffers,
@@ -82,5 +89,6 @@ export {
 	//sendDataForm,
 	dataFormSending,
 	dataFormSuccess,
-	dataFormError
+	dataFormError,
+	pressLike
 };

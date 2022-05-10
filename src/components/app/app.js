@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import Header from '../header';
 import MainPage from '../main-page';
 import PageDetails from '../page-details';
+import ListLikedOffers from '../list-liked-offers';
 import Modal from '../modal';
 import ModalMessage from '../modal-message';
 
@@ -18,6 +19,7 @@ export default class App extends Component {
 				<Routes>
 					<Route path="/" exact element={<MainPage />} />
 					<Route path=":id" element={<PageDetails />} />
+					<Route path="/likes" element={<ListLikedOffers />} />
 				</Routes>
 				<Modal />
 				<ModalMessage />

@@ -15,7 +15,10 @@ const initialState = {
 	dataFormPosted: JSON.parse(window.localStorage.getItem('dataForm')) || {},
 	dataFormSending:  window.localStorage.getItem('loadingDataForm') || false,
 	dataFormError:  JSON.parse(window.localStorage.getItem('errorDataForm')) || false,
-	resultPostRequest: window.localStorage.getItem('resultPostRequest') || null
+	resultPostRequest: window.localStorage.getItem('resultPostRequest') || null,
+
+	listLikedOffers: JSON.parse(window.localStorage.getItem('listLikedOffers')) || [],
+	//listLikedOffers: []
 
 };
 
@@ -39,6 +42,29 @@ const filterCateg = (filter, offers) => {
 			return offers.sort(sortOffers('rating')).reverse();
 	}
 };
+
+
+const createListLikedOffers = (state, idOffer) => {
+	const {listOffers, listLikedOffers} = state;
+	const offer = listOffers.find(({id}) => id === idOffer);
+	const itemIndex = listLikedOffers.findIndex(({id}) => id === idOffer);
+	let newListLikedOffers = [];
+
+	if (itemIndex < 0) {
+		const newItemLiked = {...offer, like: true};
+		newListLikedOffers = [...listLikedOffers, newItemLiked];
+		window.localStorage.setItem('listLikedOffers', JSON.stringify(newListLikedOffers));
+
+		return newListLikedOffers;
+	} else {
+		newListLikedOffers =  [...listLikedOffers.slice(0, itemIndex), 
+									...listLikedOffers.slice(itemIndex + 1)];
+		window.localStorage.setItem('listLikedOffers', JSON.stringify(newListLikedOffers));
+		
+		return newListLikedOffers;
+	}
+};
+
 
 const reducer = (state = initialState, action) => {
 
@@ -97,6 +123,14 @@ const reducer = (state = initialState, action) => {
 				loading: false,
 				listOffers: [],
 				error: action.payload
+			}
+
+		//Likes
+
+		case 'PRESS_LIKE':
+			return {
+				...state,
+				listLikedOffers: createListLikedOffers(state, action.payload)
 			}
 
 		case 'FETCH_DATA_CITIES_REQUEST': 

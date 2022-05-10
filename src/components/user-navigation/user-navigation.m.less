@@ -1,32 +1,60 @@
 .userList {
 	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
 	right: 35px;
 	top: 35px;
+
+	& a {
+		position: relative;
+		font-weight: 600;
+		font-size: 19px;
+		color: #fff;
+
+		&:hover {
+			color: rgba(239,222,205);
+		}
+
+		&:active {
+			color: rgba(202, 196, 176, 1);
+		}
+
+		& span {
+			display: none;
+		}
+	}
 }
 
 .linkLogin {
-	position: relative;
-	font-weight: 600;
-	font-size: 19px;
-	color: #fff;
 	&:hover {
-		color: rgba(239,222,205);
-
 		& .svgBox {
 			color: rgba(202, 196, 176, 0.9);
 		}
 	}
 
 	&:active {
-		color: rgba(202, 196, 176, 1);
-
 		& .svgBox {
 			color: rgba(202, 196, 176, 1);
 		}
 	}
 
-	& span {
-		display: none;
+}
+
+.linkFavorite {
+	& .svgBox {
+		color: rgba(239,51,64);
+	}
+
+	&:hover {
+		& .svgBox {
+			color: rgba(239,51,1);
+		}
+	}
+
+	&:active {
+		& .svgBox {
+			color: rgba(230,57,5, 1);
+		}
 	}
 }
 
@@ -43,17 +71,33 @@
 	}
 }
 
+.itemFavorite { 
+	.svgBox {
+		top: -14px;
+		left: -65px;
+		width: 34px;
+	}
+}
+
 @media (min-width: 768px) {
 
 	.userList {
 		right: 45px;
 		top: 32px;
+
+		& a {
+			& span {
+				display: inline;
+			}
+		}
 	}
 
-	.linkLogin {
+	.itemFavorite {
+		margin-right: 50px;
 
-		& span {
-			display: inline;
+		& .svgBox {
+			top: -6px;
+			left: -41px;
 		}
 	}
 
@@ -68,5 +112,13 @@
 	.userList {
 		right: 65px;
 		//top: 32px;
+	}
+
+	.itemFavorite {
+		margin-right: 65px;
+
+		& .svgBox {
+			left: -42px;
+		}
 	}
 }
